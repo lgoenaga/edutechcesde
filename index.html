@@ -1,11 +1,28 @@
 <!DOCTYPE html>
-<html lang="</div>es">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio - Edu Tech CESDE</title>
     <link rel="icon" href="./img/icono-cesde.png" type="image/x-icon" sizes="192x192">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .carrusel-img {
+            background-color: #f2f2f2;
+            padding: 20px;
+            display: flex;
+            overflow-x: auto;
+        }
+
+        .carrusel-img img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-right: 10px;
+        }
+
+    </style>
 </head>
 <body>
     <header>
@@ -38,9 +55,23 @@
                 <li>Si el equipo se entrega después del tiempo establecido, el usuario será <strong>suspendido por 1 mes</strong> después de la tercera infracción.</li>
             </ul>
         </section>
+        <section class="carrusel-img">
+            <div class="carrusel-img">
+                <img src="./img/Contacto-cesde.jpg" alt="CESDE 1">
+                <img src="./img/desarrollo-software-cesde.jpg" alt="CESDE 2">
+                <img src="./img/Diseno-grafico-cesde.jpg" alt="CESDE 3">
+                <img src="./img/herramientas-ofimaticas.jpg" alt="CESDE 4">
+                <img src="./img/portada-cesde.jpg" alt="CESDE 5">
+                <img src="./img/Contacto-cesde.jpg" alt="CESDE 1">
+                <img src="./img/desarrollo-software-cesde.jpg" alt="CESDE 2">
+                <img src="./img/Diseno-grafico-cesde.jpg" alt="CESDE 3">
+                <img src="./img/herramientas-ofimaticas.jpg" alt="CESDE 4">
+                <img src="./img/portada-cesde.jpg" alt="CESDE 5">
+            </div>
+        </section>
     </main>
 
-    <footer style="position: fixed; bottom: 0;">
+    <footer style="position: fixed; bottom: 0; width: 100%;">
         <p>&copy; 2023 CESDE - Todos los derechos reservados.</p>
     </footer>
 </body>
