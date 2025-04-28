@@ -1,0 +1,27 @@
+:root {
+    /* Colores institucionales */
+    --color-primario: #ff0073;
+    --color-primario-oscuro: #cc005c;
+    --color-secundario: #000080;
+    --color-secundario-claro: #1a1a8a;
+    --color-fondo: #f4f4f4;
+    --color-texto: #333;
+    --color-blanco: #ffffff;
+    
+    /* Espaciado */
+    --espaciado-base: 20px;
+    --espaciado-medio: 15px;
+    --espaciado-pequeno: 10px;
+    
+    /* Bordes */
+    --radio-borde: 8px;
+    --radio-borde-pequeno: 5px;
+    
+    /* Sombras */
+    --sombra-base: 0 2px 5px rgba(0, 0, 0, 0.1);
+    
+    /* Tipografía */
+    --fuente-principal: Arial, sans-serif;
+    --tamano-texto-base: 16px;
+    --tamano-texto-pequeno: 12px;
+} 

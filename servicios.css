@@ -1,0 +1,60 @@
+/* ==========================================================================
+   Estilos de Servicios
+   ========================================================================== */
+
+/* Estilos para la sección de servicios */
+.servicios {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Estilos para las tarjetas de equipos */
+.card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para las imágenes de las tarjetas */
+.card-img {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* Estilos para el texto de las tarjetas */
+.card-text {
+    text-align: center;
+}
+
+/* Estilos para los títulos de las tarjetas */
+.card-text h3 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Estilos para los párrafos de las tarjetas */
+.card-text p {
+    color: #666;
+    margin-bottom: 15px;
+}
+
+/* Estilos para los enlaces de las tarjetas */
+.card-text a {
+    color: #ff0073;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Efecto hover para los enlaces */
+.card-text a:hover {
+    text-decoration: underline;
+}
+
+footer{
+    position: relative;
+    bottom: 0;
+    width: 98.5%;
+}

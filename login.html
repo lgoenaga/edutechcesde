@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <!-- Metadatos básicos -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iniciar Sesión - CESDE</title>
+    <!-- Favicon y estilos -->
     <link rel="icon" href="./img/icono-cesde.png" type="image/x-icon" sizes="192x192">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Encabezado de la página -->
     <header>
+        <!-- Barra de navegación -->
         <nav>
             <div class="logo">
                 <img src="logo-cesde.png" alt="Logo CESDE">
             </div>
+            <!-- Menú de navegación -->
             <ul>
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="servicios.html">Servicios</a></li>
@@ -24,18 +29,24 @@
         </nav>
     </header>
 
+    <!-- Contenido principal -->
     <main>
+        <!-- Formulario de inicio de sesión -->
         <section class="login">
             <h1>Iniciar Sesión</h1>
+            <!-- Formulario de autenticación -->
             <form action="#" method="post">
+                <!-- Campo de usuario -->
                 <div class="form-group">
                     <label for="usuario">Usuario:</label>
                     <input type="text" id="usuario" name="usuario" required>
                 </div>
+                <!-- Campo de contraseña -->
                 <div class="form-group">
                     <label for="contrasena">Contraseña:</label>
                     <input type="password" id="contrasena" name="contrasena" required>
                 </div>
+                <!-- Botón de envío -->
                 <div class="form-group">
                     <button type="submit">Iniciar Sesión</button>
                 </div>
@@ -43,6 +54,7 @@
         </section>
     </main>
 
+    <!-- Pie de página -->
     <footer>
         <p>&copy; 2023 CESDE - Todos los derechos reservados.</p>
     </footer>

@@ -1,0 +1,62 @@
+/* Componentes reutilizables */
+.card {
+    background-color: var(--color-blanco);
+    border-radius: var(--radio-borde);
+    padding: var(--espaciado-medio);
+    box-shadow: var(--sombra-base);
+}
+
+.button {
+    padding: var(--espaciado-pequeno) var(--espaciado-base);
+    border-radius: var(--radio-borde-pequeno);
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.button-primary {
+    background-color: var(--color-primario);
+    color: var(--color-blanco);
+}
+
+.button-primary:hover {
+    background-color: var(--color-primario-oscuro);
+}
+
+.button-secondary {
+    background-color: var(--color-secundario);
+    color: var(--color-blanco);
+}
+
+.button-secondary:hover {
+    background-color: var(--color-secundario-claro);
+}
+
+.form-group {
+    margin-bottom: var(--espaciado-pequeno);
+}
+
+.form-control {
+    width: 100%;
+    padding: var(--espaciado-pequeno);
+    border: 1px solid #ddd;
+    border-radius: var(--radio-borde-pequeno);
+    font-size: var(--tamano-texto-pequeno);
+    transition: border-color 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: var(--color-primario);
+    outline: none;
+}
+
+.form-control.error {
+    border-color: #ff0000;
+}
+
+.error-message {
+    color: #ff0000;
+    font-size: var(--tamano-texto-pequeno);
+    margin-top: 5px;
+} 

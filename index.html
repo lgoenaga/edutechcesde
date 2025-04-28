@@ -1,18 +1,42 @@
 <!DOCTYPE html>
-<html lang="</div>es">
+<html lang="es">
 <head>
+    <!-- Metadatos básicos -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio - Edu Tech CESDE</title>
+    <!-- Favicon y estilos -->
     <link rel="icon" href="./img/icono-cesde.png" type="image/x-icon" sizes="192x192">
     <link rel="stylesheet" href="styles.css">
+    <!-- Estilos específicos para el carrusel -->
+    <style>
+        /* Contenedor del carrusel de imágenes */
+        .carrusel-img {
+            background-color: #f2f2f2;
+            padding: 20px;
+            display: flex;
+            overflow-x: auto;
+        }
+
+        /* Estilos para las imágenes del carrusel */
+        .carrusel-img img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-right: 10px;
+        }
+    </style>
 </head>
 <body>
+    <!-- Encabezado de la página -->
     <header>
+        <!-- Barra de navegación -->
         <nav>
             <div class="logo">
                 <img src="./img/logo-cesde-blanco-sin-fondov2.png" alt="Logo CESDE">
             </div>
+            <!-- Menú de navegación -->
             <ul>
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="servicios.html">Servicios</a></li>
@@ -23,12 +47,15 @@
         </nav>
     </header>
 
+    <!-- Contenido principal -->
     <main>
+        <!-- Sección de introducción -->
         <section class="intro">
             <h1>Bienvenido al Sistema de Préstamo de Equipos de Cómputo</h1>
             <p>Este sistema está diseñado para facilitar el acceso a equipos tecnológicos dentro de la institución CESDE, garantizando un uso responsable y equitativo.</p>
         </section>
 
+        <!-- Sección de reglas y políticas -->
         <section class="reglas">
             <h2>Reglas y Políticas de Préstamo</h2>
             <ul>
@@ -38,9 +65,26 @@
                 <li>Si el equipo se entrega después del tiempo establecido, el usuario será <strong>suspendido por 1 mes</strong> después de la tercera infracción.</li>
             </ul>
         </section>
+
+        <!-- Sección del carrusel de imágenes -->
+        <section class="carrusel-img">
+            <div class="carrusel-img">
+                <img src="./img/Contacto-cesde.jpg" alt="CESDE 1">
+                <img src="./img/desarrollo-software-cesde.jpg" alt="CESDE 2">
+                <img src="./img/Diseno-grafico-cesde.jpg" alt="CESDE 3">
+                <img src="./img/herramientas-ofimaticas.jpg" alt="CESDE 4">
+                <img src="./img/portada-cesde.jpg" alt="CESDE 5">
+                <img src="./img/Contacto-cesde.jpg" alt="CESDE 1">
+                <img src="./img/desarrollo-software-cesde.jpg" alt="CESDE 2">
+                <img src="./img/Diseno-grafico-cesde.jpg" alt="CESDE 3">
+                <img src="./img/herramientas-ofimaticas.jpg" alt="CESDE 4">
+                <img src="./img/portada-cesde.jpg" alt="CESDE 5">
+            </div>
+        </section>
     </main>
 
-    <footer style="position: fixed; bottom: 0;">
+    <!-- Pie de página -->
+    <footer style="position: fixed; bottom: 0; width: 100%;">
         <p>&copy; 2023 CESDE - Todos los derechos reservados.</p>
     </footer>
 </body>
