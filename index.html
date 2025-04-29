@@ -27,25 +27,28 @@
             /* Allow main content to grow and fill available space */
             main {
                 flex-grow: 1;
-                display: flex; /* Use flexbox for main's children */
-                flex-direction: column; /* Stack children vertically */
-                justify-content: center; /* Center content vertically */
-                overflow: hidden; /* Prevent main from causing body scroll if content is slightly too tall */
-                padding: 1rem 0; /* Add some vertical padding */
+                display: flex;
+                flex-direction: column;
+                align-items: center; /* Center content horizontally */
+                overflow-y: auto; /* Allow scrolling if content overflows */
+                padding: 1rem 15px; /* Add horizontal padding */
             }
 
-            /* Adjust margins for sections within main if needed */
+            /* Adjust margins for sections within main */
             .intro, .reglas {
-                 margin-left: auto; /* Center content horizontally if needed */
-                 margin-right: auto;
-                 padding-left: 15px; /* Add some padding */
+                 padding-left: 15px;
                  padding-right: 15px;
-                 max-width: 800px; /* Limit width for better readability */
-                 margin-bottom: 1rem; /* Adjust spacing between sections */
+                 max-width: 800px; /* Limit width */
+                 width: 100%; /* Use full width up to max-width */
+                 margin-bottom: 1.5rem; /* Adjust spacing */
+                 text-align: center; /* Center text */
+            }
+            .reglas {
+                text-align: left; /* Keep rules list left-aligned */
             }
 
             .intro h1 {
-                font-size: 1.8rem; /* Slightly reduce font size if needed */
+                font-size: 1.8rem;
                 margin-bottom: 0.5rem;
             }
             .intro p {
@@ -54,79 +57,117 @@
             }
 
             .reglas h2 {
-                 font-size: 1.5rem; /* Slightly reduce font size if needed */
+                 font-size: 1.5rem;
                  margin-bottom: 0.5rem;
+                 text-align: center; /* Center heading */
             }
 
             .reglas ul {
-                padding-left: 20px;
-                margin-bottom: 0; /* Remove bottom margin if it's the last element */
+                padding-left: 0; /* Remove default padding */
+                list-style-position: inside; /* Indent bullets */
+                margin-bottom: 0;
+                display: inline-block; /* Fit content width */
+                text-align: left; /* Ensure list items are left-aligned */
+                margin-left: auto;
+                margin-right: auto;
             }
              .reglas li {
                  margin-bottom: 0.5rem;
                  font-size: 0.95rem;
              }
 
-
-            /* Keep existing slideshow styles */
+            /* Slideshow Styles */
             .slideshow-container {
                 position: relative; /* Needed for absolute positioning of children */
-                min-height: 220px; /* Adjust based on image height + margin */
-                margin-bottom: 20px; /* Keep original margin */
-                flex-shrink: 0; /* Prevent slideshow from shrinking */
+                width: 100%; /* Take full width of parent */
+                max-width: 800px; /* Consistent max-width */
+                margin: 20px auto; /* Center container and add vertical margin */
+                flex-shrink: 0; /* Prevent container from shrinking */
+                overflow: hidden; /* Hide potential overflow */
+                /* Adjust min-height dynamically or remove if content defines height */
+                 min-height: 150px; /* Example: Adjust based on expected image height */
             }
 
             .image-block {
-                display: flex; /* Organiza las imágenes en una fila */
-                justify-content: center; /* Centra las imágenes horizontalmente */
-                align-items: center; /* Centra las imágenes verticalmente */
-                flex-wrap: wrap; /* Permite que las imágenes pasen a la siguiente línea si no caben */
-                position: absolute; /* Position blocks on top of each other */
+                display: flex;
+                justify-content: center; /* Center images horizontally */
+                align-items: center; /* Center images vertically */
+                flex-wrap: wrap; /* Allow wrapping */
+                gap: 10px; /* Spacing between images */
+                position: absolute;
                 top: 0;
                 left: 0;
                 width: 100%;
-                opacity: 0; /* Hidden by default */
-                /* transition: opacity 0.5s ease-in-out; Optional: Add fade transition */
+                padding: 10px 0; /* Vertical padding inside the block */
+                opacity: 0; /* Hidden by default, controlled by animation */
             }
 
             .image-block img {
-                width: 200px; /* Ancho fijo por imagen */
-                height: 200px;
-                object-fit: cover;
-                margin: 5px; /* Espacio alrededor de cada imagen */
+                /* Responsive width: aim for 4 across on larger screens */
+                width: calc(25% - 12px); /* Adjust calculation based on gap */
+                max-width: 180px; /* Max size per image */
+                height: auto; /* Maintain aspect ratio */
+                object-fit: cover; /* Cover the area */
+                border-radius: 8px; /* Rounded corners */
+                vertical-align: middle; /* Better alignment */
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow */
             }
 
-            /* Animation Keyframes for infinite loop */
+            /* Animation Keyframes for smoother fade */
             @keyframes cycleBlock1 {
-                0% { opacity: 1; }      /* Start visible */
-                49.9% { opacity: 1; }   /* Stay visible for almost 10s */
-                50% { opacity: 0; }     /* Fade out at 10s */
-                99.9% { opacity: 0; }   /* Stay hidden */
-                100% { opacity: 1; }    /* Fade back in for loop */
+                0% { opacity: 1; }
+                45% { opacity: 1; }     /* Stay visible (e.g., 9s of 20s) */
+                50% { opacity: 0; }     /* Fade out (e.g., over 1s) */
+                95% { opacity: 0; }     /* Stay hidden */
+                100% { opacity: 1; }    /* Fade back in */
             }
 
             @keyframes cycleBlock2 {
-                0% { opacity: 0; }      /* Start hidden */
-                49.9% { opacity: 0; }   /* Stay hidden */
-                50% { opacity: 1; }     /* Fade in at 10s */
-                99.9% { opacity: 1; }   /* Stay visible */
-                100% { opacity: 0; }    /* Fade out for loop */
+                0% { opacity: 0; }
+                45% { opacity: 0; }     /* Stay hidden */
+                50% { opacity: 1; }     /* Fade in */
+                95% { opacity: 1; }     /* Stay visible */
+                100% { opacity: 0; }    /* Fade out */
             }
 
             /* Apply animations */
             .slideshow-container .image-block:nth-of-type(1) {
                 opacity: 1; /* Start visible */
-                animation: cycleBlock1 20s infinite; /* 10s visible, 10s hidden, repeat */
+                animation: cycleBlock1 20s infinite ease-in-out; /* 20s total cycle, smooth timing */
             }
 
             .slideshow-container .image-block:nth-of-type(2) {
                 opacity: 0; /* Start hidden */
-                animation: cycleBlock2 20s infinite; /* 10s hidden, 10s visible, repeat */
+                animation: cycleBlock2 20s infinite ease-in-out; /* 20s total cycle, smooth timing */
             }
 
             /* Ensure header and footer do not grow or shrink */
              header, footer {
                  flex-shrink: 0;
+             }
+
+             /* Responsive adjustments for image layout */
+             @media (max-width: 768px) {
+                 .image-block img {
+                     /* Aim for 3 across on medium screens */
+                     width: calc(33.33% - 10px);
+                     max-width: 160px;
+                 }
+                 .slideshow-container { min-height: 130px; } /* Adjust height */
+             }
+
+             @media (max-width: 480px) {
+                 .image-block img {
+                     /* Aim for 2 across on small screens */
+                     width: calc(50% - 10px);
+                     max-width: 150px;
+                 }
+                 .slideshow-container { min-height: 120px; } /* Adjust height */
+
+                 .intro h1 { font-size: 1.5rem; }
+                 .intro p { font-size: 0.9rem; }
+                 .reglas h2 { font-size: 1.3rem; }
+                 .reglas li { font-size: 0.9rem; }
              }
         </style>
     </head>
@@ -190,10 +231,11 @@
                     <img src="./img/herramientas-ofimaticas.jpg" alt="CESDE 4" />
                 </div>
                 <div class="image-block">
+                    <!-- Ensure the second block has different images or order for visual change -->
                     <img src="./img/herramientas-ofimaticas.jpg" alt="CESDE 8" />
+                    <img src="./img/Diseno-grafico-cesde.jpg" alt="CESDE 7" />
                     <img src="./img/desarrollo-software-cesde.jpg" alt="CESDE 6" />
                     <img src="./img/Contacto-cesde.jpg" alt="CESDE 5" />
-                    <img src="./img/Diseno-grafico-cesde.jpg" alt="CESDE 7" />
                 </div>
             </div>
         </main>
