@@ -1,148 +1,205 @@
 <!DOCTYPE html>
 <html lang="es">
-	<head>
-		<!-- Metadatos básicos -->
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Inicio - Edu Tech CESDE</title>
-		<!-- Favicon y estilos -->
-		<link
-			rel="icon"
-			href="./img/icono-cesde.png"
-			type="image/x-icon"
-			sizes="192x192"
-		/>
-		<link rel="stylesheet" href="css/styles.css" />
-		<!-- Estilos específicos para el carrusel -->
-		<style>
-			/* Contenedor del carrusel */
-			.carrusel-img {
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				overflow: hidden;
-				position: relative;
-				width: 100%;
-				max-width: 820px; /* Ajustado para incluir márgenes */
-				margin: auto;
-				margin-bottom: 20px; /* Espacio entre el carrusel y el footer */
-			}
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Inicio - Edu Tech CESDE</title>
+        <link
+            rel="icon"
+            href="./img/icono-cesde.png"
+            type="image/x-icon"
+            sizes="192x192"
+        />
+        <link rel="stylesheet" href="css/styles.css" />
+        <style>
+            /* Ensure body takes full viewport height and uses flexbox */
+            html, body {
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
 
-			/* Contenedor interno para las imágenes */
-			.carrusel-track {
-				display: flex;
-				width: calc(
-					(200px + 10px) * 8
-				); /* Ancho total de las imágenes + márgenes */
-				animation: slide 20s infinite; /* Animación automática cada 20 segundos */
-			}
+            body {
+                display: flex;
+                flex-direction: column;
+            }
 
-			/* Estilos para las imágenes */
-			.carrusel-img img {
-				width: 200px;
-				height: 200px;
-				object-fit: cover;
-				margin: 0 5px; /* Márgenes entre las imágenes */
-			}
+            /* Allow main content to grow and fill available space */
+            main {
+                flex-grow: 1;
+                display: flex; /* Use flexbox for main's children */
+                flex-direction: column; /* Stack children vertically */
+                justify-content: center; /* Center content vertically */
+                overflow: hidden; /* Prevent main from causing body scroll if content is slightly too tall */
+                padding: 1rem 0; /* Add some vertical padding */
+            }
 
-			/* Animación automática */
-			@keyframes slide {
-				0% {
-					transform: translateX(0); /* Primera página */
-				}
-				25% {
-					transform: translateX(0); /* Mantener la primera página */
-				}
-				50% {
-					transform: translateX(
-						-840px
-					); /* Segunda página (4 imágenes desplazadas) */
-				}
-				75% {
-					transform: translateX(-840px); /* Mantener la segunda página */
-				}
-				100% {
-					transform: translateX(0); /* Regresa a la primera página */
-				}
-			}
-		</style>
-	</head>
-	<body>
-		<!-- Encabezado de la página -->
-		<header>
-			<!-- Barra de navegación -->
-			<nav>
-				<div class="logo">
-					<img src="./img/logo-cesde-blanco-sin-fondov2.png" alt="Logo CESDE" />
-				</div>
-				<!-- Menú de navegación -->
-				<ul>
-					<li><a href="index.html" class="active">Inicio</a></li>
-					<li><a href="servicios.html">Servicios</a></li>
-					<li><a href="blog.html">Blog</a></li>
-					<li><a href="contacto.html">Contacto</a></li>
-					<li><a href="ubicacion.html">Ubicación</a></li>
-				</ul>
-			</nav>
-		</header>
+            /* Adjust margins for sections within main if needed */
+            .intro, .reglas {
+                 margin-left: auto; /* Center content horizontally if needed */
+                 margin-right: auto;
+                 padding-left: 15px; /* Add some padding */
+                 padding-right: 15px;
+                 max-width: 800px; /* Limit width for better readability */
+                 margin-bottom: 1rem; /* Adjust spacing between sections */
+            }
 
-		<!-- Contenido principal -->
-		<main>
-			<!-- Sección de introducción -->
-			<section class="intro">
-				<h1>Bienvenido al Sistema de Préstamo de Equipos de Cómputo</h1>
-				<p>
-					Este sistema está diseñado para facilitar el acceso a equipos
-					tecnológicos dentro de la institución CESDE, garantizando un uso
-					responsable y equitativo.
-				</p>
-			</section>
+            .intro h1 {
+                font-size: 1.8rem; /* Slightly reduce font size if needed */
+                margin-bottom: 0.5rem;
+            }
+            .intro p {
+                font-size: 1rem;
+                 margin-bottom: 1rem;
+            }
 
-			<!-- Sección de reglas y políticas -->
-			<section class="reglas">
-				<h2>Reglas y Políticas de Préstamo</h2>
-				<ul>
-					<li>
-						Los equipos solo pueden ser prestados y utilizados
-						<strong>dentro de las instalaciones de la institución CESDE</strong
-						>.
-					</li>
-					<li>
-						Solo pueden solicitar préstamos
-						<strong>personas activas</strong> con vínculo laboral o estudiantil
-						en la institución.
-					</li>
-					<li>
-						El préstamo de equipos tiene un límite de
-						<strong>3 horas</strong> por solicitud.
-					</li>
-					<li>
-						Si el equipo se entrega después del tiempo establecido, el usuario
-						será <strong>suspendido por 1 mes</strong> después de la tercera
-						infracción.
-					</li>
-				</ul>
-			</section>
+            .reglas h2 {
+                 font-size: 1.5rem; /* Slightly reduce font size if needed */
+                 margin-bottom: 0.5rem;
+            }
 
-			<!-- Carrusel -->
-			<section class="carrusel-img">
-				<!-- Contenedor de las imágenes -->
-				<div class="carrusel-track">
-					<img src="./img/Contacto-cesde.jpg" alt="CESDE 1" />
-					<img src="./img/desarrollo-software-cesde.jpg" alt="CESDE 2" />
-					<img src="./img/Diseno-grafico-cesde.jpg" alt="CESDE 3" />
-					<img src="./img/herramientas-ofimaticas.jpg" alt="CESDE 4" />
-					<img src="./img/Contacto-cesde.jpg" alt="CESDE 5" />
-					<img src="./img/desarrollo-software-cesde.jpg" alt="CESDE 6" />
-					<img src="./img/Diseno-grafico-cesde.jpg" alt="CESDE 7" />
-					<img src="./img/herramientas-ofimaticas.jpg" alt="CESDE 8" />
-				</div>
-			</section>
-		</main>
+            .reglas ul {
+                padding-left: 20px;
+                margin-bottom: 0; /* Remove bottom margin if it's the last element */
+            }
+             .reglas li {
+                 margin-bottom: 0.5rem;
+                 font-size: 0.95rem;
+             }
 
-		<!-- Pie de página -->
-		<footer>
-			<p>&copy; 2023 CESDE - Todos los derechos reservados.</p>
-		</footer>
-	</body>
+
+            /* Keep existing slideshow styles */
+            .slideshow-container {
+                position: relative; /* Needed for absolute positioning of children */
+                min-height: 220px; /* Adjust based on image height + margin */
+                margin-bottom: 20px; /* Keep original margin */
+                flex-shrink: 0; /* Prevent slideshow from shrinking */
+            }
+
+            .image-block {
+                display: flex; /* Organiza las imágenes en una fila */
+                justify-content: center; /* Centra las imágenes horizontalmente */
+                align-items: center; /* Centra las imágenes verticalmente */
+                flex-wrap: wrap; /* Permite que las imágenes pasen a la siguiente línea si no caben */
+                position: absolute; /* Position blocks on top of each other */
+                top: 0;
+                left: 0;
+                width: 100%;
+                opacity: 0; /* Hidden by default */
+                /* transition: opacity 0.5s ease-in-out; Optional: Add fade transition */
+            }
+
+            .image-block img {
+                width: 200px; /* Ancho fijo por imagen */
+                height: 200px;
+                object-fit: cover;
+                margin: 5px; /* Espacio alrededor de cada imagen */
+            }
+
+            /* Animation Keyframes for infinite loop */
+            @keyframes cycleBlock1 {
+                0% { opacity: 1; }      /* Start visible */
+                49.9% { opacity: 1; }   /* Stay visible for almost 10s */
+                50% { opacity: 0; }     /* Fade out at 10s */
+                99.9% { opacity: 0; }   /* Stay hidden */
+                100% { opacity: 1; }    /* Fade back in for loop */
+            }
+
+            @keyframes cycleBlock2 {
+                0% { opacity: 0; }      /* Start hidden */
+                49.9% { opacity: 0; }   /* Stay hidden */
+                50% { opacity: 1; }     /* Fade in at 10s */
+                99.9% { opacity: 1; }   /* Stay visible */
+                100% { opacity: 0; }    /* Fade out for loop */
+            }
+
+            /* Apply animations */
+            .slideshow-container .image-block:nth-of-type(1) {
+                opacity: 1; /* Start visible */
+                animation: cycleBlock1 20s infinite; /* 10s visible, 10s hidden, repeat */
+            }
+
+            .slideshow-container .image-block:nth-of-type(2) {
+                opacity: 0; /* Start hidden */
+                animation: cycleBlock2 20s infinite; /* 10s hidden, 10s visible, repeat */
+            }
+
+            /* Ensure header and footer do not grow or shrink */
+             header, footer {
+                 flex-shrink: 0;
+             }
+        </style>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <div class="logo">
+                    <img src="./img/logo-cesde-blanco-sin-fondov2.png" alt="Logo CESDE" />
+                </div>
+                <ul>
+                    <li><a href="index.html" class="active">Inicio</a></li>
+                    <li><a href="servicios.html">Servicios</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="ubicacion.html">Ubicación</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section class="intro">
+                <h1>Bienvenido al Sistema de Préstamo de Equipos de Cómputo</h1>
+                <p>
+                    Este sistema está diseñado para facilitar el acceso a equipos
+                    tecnológicos dentro de la institución CESDE, garantizando un uso
+                    responsable y equitativo.
+                </p>
+            </section>
+
+            <section class="reglas">
+                <h2>Reglas y Políticas de Préstamo</h2>
+                <ul>
+                    <li>
+                        Los equipos solo pueden ser prestados y utilizados
+                        <strong>dentro de las instalaciones de la institución CESDE</strong
+                        >.
+                    </li>
+                    <li>
+                        Solo pueden solicitar préstamos
+                        <strong>personas activas</strong> con vínculo laboral o estudiantil
+                        en la institución.
+                    </li>
+                    <li>
+                        El préstamo de equipos tiene un límite de
+                        <strong>3 horas</strong> por solicitud.
+                    </li>
+                    <li>
+                        Si el equipo se entrega después del tiempo establecido, el usuario
+                        será <strong>suspendido por 1 mes</strong> después de la tercera
+                        infracción.
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Bloques de imágenes con contenedor para slideshow -->
+            <div class="slideshow-container">
+                <div class="image-block">
+                    <img src="./img/Contacto-cesde.jpg" alt="CESDE 1" />
+                    <img src="./img/desarrollo-software-cesde.jpg" alt="CESDE 2" />
+                    <img src="./img/Diseno-grafico-cesde.jpg" alt="CESDE 3" />
+                    <img src="./img/herramientas-ofimaticas.jpg" alt="CESDE 4" />
+                </div>
+                <div class="image-block">
+                    <img src="./img/herramientas-ofimaticas.jpg" alt="CESDE 8" />
+                    <img src="./img/desarrollo-software-cesde.jpg" alt="CESDE 6" />
+                    <img src="./img/Contacto-cesde.jpg" alt="CESDE 5" />
+                    <img src="./img/Diseno-grafico-cesde.jpg" alt="CESDE 7" />
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2023 CESDE - Todos los derechos reservados.</p>
+        </footer>
+    </body>
 </html>
