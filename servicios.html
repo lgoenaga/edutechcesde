@@ -1,85 +1,80 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <!-- Metadatos básicos -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Servicios - Edu Tech CESDE</title>
-    <!-- Favicon y estilos -->
     <link rel="icon" href="./img/icono-cesde.png" type="image/x-icon" sizes="192x192">
+    <!-- Link general styles -->
     <link rel="stylesheet" href="css/styles.css">
+    <!-- Link specific styles for services page -->
     <link rel="stylesheet" href="css/servicios.css">
 </head>
 <body>
-    <!-- Encabezado de la página -->
-    <header>
-        <!-- Barra de navegación -->
-        <nav>
+    <!-- Standard Header -->
+    <header role="banner">
+        <nav class="navbar flex flex-between flex-center" role="navigation" aria-label="Menú principal">
             <div class="logo">
-                <img src="./img/logo-cesde-blanco-sin-fondov2.png" alt="Logo CESDE">
+                <img src="./img/logo-cesde-blanco-sin-fondov2.png" alt="Logo CESDE" loading="lazy">
             </div>
-            <!-- Menú de navegación -->
-            <ul>
+            <ul class="nav-menu flex">
                 <li><a href="index.html">Inicio</a></li>
-                <li><a href="servicios.html" class="active">Servicios</a></li>
+                <li><a href="servicios.html" class="active" aria-current="page">Servicios</a></li>
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
                 <li><a href="ubicacion.html">Ubicación</a></li>
             </ul>
-            <!-- Botón de inicio de sesión -->
-            <button class="login-btn" onclick="location.href='./login.html'">Iniciar Sesión</button>
+            <button class="button button-secondary" onclick="location.href='./login.html'" aria-label="Iniciar sesión">
+                Iniciar Sesión
+            </button>
         </nav>
     </header>
 
-    <!-- Contenido principal -->
-    <main>
-        <!-- Sección de servicios -->
-        <section class="servicios">
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <!-- Services Section -->
+        <section class="section-services">
             <h1>Servicios de Préstamo de Equipos</h1>
-            <!-- Contenedor de tarjetas de equipos -->
-            <div class="equipo-cards">
-                <!-- Tarjeta de Desarrollo de Software -->
-                <div class="card">
-                    <div class="card-img">
-                        <img src="./img/desarrollo-software-cesde.jpg" alt="Desarrollo de Software" width="150px" height="150px">
-                    </div>
-                    <div class="card-text">  
+            <!-- Equipment Cards Container -->
+            <div class="equipment-cards grid grid-3"> <!-- Using grid layout -->
+                <!-- Software Development Card -->
+                <article class="card service-card">
+                    <img src="./img/desarrollo-software-cesde.jpg" alt="Icono representativo de Desarrollo de Software" class="card-img" loading="lazy">
+                    <div class="card-content">
                         <h3>Desarrollo de Software</h3>
                         <p>Equipos con herramientas especializadas para programación.</p>
-                        <a href="prestamo.html">Más información...</a>
-                    </div>  
-                </div>
-                
-                <!-- Tarjeta de Diseño Gráfico -->
-                <div class="card">
-                    <div class="card-img">
-                        <img src="./img/Diseno-grafico-cesde.jpg" alt="Diseño Gráfico" width="150px" height="150px">
+                        <a href="prestamo.html" class="card-link">Solicitar préstamo...</a>
                     </div>
-                    <div class="card-text">             
+                </article>
+
+                <!-- Graphic Design Card -->
+                <article class="card service-card">
+                    <img src="./img/Diseno-grafico-cesde.jpg" alt="Icono representativo de Diseño Gráfico" class="card-img" loading="lazy">
+                    <div class="card-content">
                         <h3>Diseño Gráfico</h3>
                         <p>Equipos con software de diseño y edición gráfica.</p>
-                        <a href="prestamo.html">Más información...</a>
+                        <a href="prestamo.html" class="card-link">Solicitar préstamo...</a>
                     </div>
-                </div>
+                </article>
 
-                <!-- Tarjeta de Herramientas Ofimáticas -->
-                <div class="card">
-                    <div class="card-img">
-                        <img src="./img/herramientas-ofimaticas.jpg" alt="Herramientas Ofimaticas" width="150px" height="150px">
-                    </div>
-                    <div class="card-text">  
+                <!-- Office Tools Card -->
+                <article class="card service-card">
+                    <img src="./img/herramientas-ofimaticas.jpg" alt="Icono representativo de Herramientas Ofimáticas" class="card-img" loading="lazy">
+                    <div class="card-content">
                         <h3>Herramientas Ofimáticas</h3>
                         <p>Equipos con software básico para tareas administrativas y ofimáticas.</p>
-                        <a href="prestamo.html">Más información...</a>
+                        <a href="prestamo.html" class="card-link">Solicitar préstamo...</a>
                     </div>
-                </div>
+                </article>
             </div>
         </section>
     </main>
 
-    <!-- Pie de página -->
-    <footer>
-        <p>&copy; 2023 CESDE - Todos los derechos reservados.</p>
+    <!-- Standard Footer -->
+    <footer role="contentinfo" class="footer">
+        <div class="container">
+            <p>&copy; 2025 CESDE - Todos los derechos reservados.</p>
+        </div>
     </footer>
 </body>
 </html>

@@ -1,247 +1,95 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Inicio - Edu Tech CESDE</title>
-        <link
-            rel="icon"
-            href="./img/icono-cesde.png"
-            type="image/x-icon"
-            sizes="192x192"
-        />
-        <link rel="stylesheet" href="css/styles.css" />
-        <style>
-            /* Ensure body takes full viewport height and uses flexbox */
-            html, body {
-                height: 100%;
-                margin: 0;
-                padding: 0;
-            }
-
-            body {
-                display: flex;
-                flex-direction: column;
-            }
-
-            /* Allow main content to grow and fill available space */
-            main {
-                flex-grow: 1;
-                display: flex;
-                flex-direction: column;
-                align-items: center; /* Center content horizontally */
-                overflow-y: auto; /* Allow scrolling if content overflows */
-                padding: 1rem 15px; /* Add horizontal padding */
-            }
-
-            /* Adjust margins for sections within main */
-            .intro, .reglas {
-                 padding-left: 15px;
-                 padding-right: 15px;
-                 max-width: 800px; /* Limit width */
-                 width: 100%; /* Use full width up to max-width */
-                 margin-bottom: 1.5rem; /* Adjust spacing */
-                 text-align: center; /* Center text */
-            }
-            .reglas {
-                text-align: left; /* Keep rules list left-aligned */
-            }
-
-            .intro h1 {
-                font-size: 1.8rem;
-                margin-bottom: 0.5rem;
-            }
-            .intro p {
-                font-size: 1rem;
-                 margin-bottom: 1rem;
-            }
-
-            .reglas h2 {
-                 font-size: 1.5rem;
-                 margin-bottom: 0.5rem;
-                 text-align: center; /* Center heading */
-            }
-
-            .reglas ul {
-                padding-left: 0; /* Remove default padding */
-                list-style-position: inside; /* Indent bullets */
-                margin-bottom: 0;
-                display: inline-block; /* Fit content width */
-                text-align: left; /* Ensure list items are left-aligned */
-                margin-left: auto;
-                margin-right: auto;
-            }
-             .reglas li {
-                 margin-bottom: 0.5rem;
-                 font-size: 0.95rem;
-             }
-
-            /* Slideshow Styles */
-            .slideshow-container {
-                position: relative; /* Needed for absolute positioning of children */
-                width: 100%; /* Take full width of parent */
-                max-width: 800px; /* Consistent max-width */
-                margin: 20px auto; /* Center container and add vertical margin */
-                flex-shrink: 0; /* Prevent container from shrinking */
-                overflow: hidden; /* Hide potential overflow */
-                /* Adjust min-height dynamically or remove if content defines height */
-                 min-height: 150px; /* Example: Adjust based on expected image height */
-            }
-
-            .image-block {
-                display: flex;
-                justify-content: center; /* Center images horizontally */
-                align-items: center; /* Center images vertically */
-                flex-wrap: wrap; /* Allow wrapping */
-                gap: 10px; /* Spacing between images */
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                padding: 10px 0; /* Vertical padding inside the block */
-                opacity: 0; /* Hidden by default, controlled by animation */
-            }
-
-            .image-block img {
-                /* Responsive width: aim for 4 across on larger screens */
-                width: calc(25% - 12px); /* Adjust calculation based on gap */
-                max-width: 180px; /* Max size per image */
-                height: auto; /* Maintain aspect ratio */
-                object-fit: cover; /* Cover the area */
-                border-radius: 8px; /* Rounded corners */
-                vertical-align: middle; /* Better alignment */
-                box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow */
-            }
-
-            /* Animation Keyframes for smoother fade */
-            @keyframes cycleBlock1 {
-                0% { opacity: 1; }
-                45% { opacity: 1; }     /* Stay visible (e.g., 9s of 20s) */
-                50% { opacity: 0; }     /* Fade out (e.g., over 1s) */
-                95% { opacity: 0; }     /* Stay hidden */
-                100% { opacity: 1; }    /* Fade back in */
-            }
-
-            @keyframes cycleBlock2 {
-                0% { opacity: 0; }
-                45% { opacity: 0; }     /* Stay hidden */
-                50% { opacity: 1; }     /* Fade in */
-                95% { opacity: 1; }     /* Stay visible */
-                100% { opacity: 0; }    /* Fade out */
-            }
-
-            /* Apply animations */
-            .slideshow-container .image-block:nth-of-type(1) {
-                opacity: 1; /* Start visible */
-                animation: cycleBlock1 20s infinite ease-in-out; /* 20s total cycle, smooth timing */
-            }
-
-            .slideshow-container .image-block:nth-of-type(2) {
-                opacity: 0; /* Start hidden */
-                animation: cycleBlock2 20s infinite ease-in-out; /* 20s total cycle, smooth timing */
-            }
-
-            /* Ensure header and footer do not grow or shrink */
-             header, footer {
-                 flex-shrink: 0;
-             }
-
-             /* Responsive adjustments for image layout */
-             @media (max-width: 768px) {
-                 .image-block img {
-                     /* Aim for 3 across on medium screens */
-                     width: calc(33.33% - 10px);
-                     max-width: 160px;
-                 }
-                 .slideshow-container { min-height: 130px; } /* Adjust height */
-             }
-
-             @media (max-width: 480px) {
-                 .image-block img {
-                     /* Aim for 2 across on small screens */
-                     width: calc(50% - 10px);
-                     max-width: 150px;
-                 }
-                 .slideshow-container { min-height: 120px; } /* Adjust height */
-
-                 .intro h1 { font-size: 1.5rem; }
-                 .intro p { font-size: 0.9rem; }
-                 .reglas h2 { font-size: 1.3rem; }
-                 .reglas li { font-size: 0.9rem; }
-             }
-        </style>
-    </head>
-    <body>
-        <header>
-            <nav>
-                <div class="logo">
-                    <img src="./img/logo-cesde-blanco-sin-fondov2.png" alt="Logo CESDE" />
-                </div>
-                <ul>
-                    <li><a href="index.html" class="active">Inicio</a></li>
-                    <li><a href="servicios.html">Servicios</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="contacto.html">Contacto</a></li>
-                    <li><a href="ubicacion.html">Ubicación</a></li>
-                </ul>
-            </nav>
-        </header>
-
-        <main>
-            <section class="intro">
-                <h1>Bienvenido al Sistema de Préstamo de Equipos de Cómputo</h1>
-                <p>
-                    Este sistema está diseñado para facilitar el acceso a equipos
-                    tecnológicos dentro de la institución CESDE, garantizando un uso
-                    responsable y equitativo.
-                </p>
-            </section>
-
-            <section class="reglas">
-                <h2>Reglas y Políticas de Préstamo</h2>
-                <ul>
-                    <li>
-                        Los equipos solo pueden ser prestados y utilizados
-                        <strong>dentro de las instalaciones de la institución CESDE</strong
-                        >.
-                    </li>
-                    <li>
-                        Solo pueden solicitar préstamos
-                        <strong>personas activas</strong> con vínculo laboral o estudiantil
-                        en la institución.
-                    </li>
-                    <li>
-                        El préstamo de equipos tiene un límite de
-                        <strong>3 horas</strong> por solicitud.
-                    </li>
-                    <li>
-                        Si el equipo se entrega después del tiempo establecido, el usuario
-                        será <strong>suspendido por 1 mes</strong> después de la tercera
-                        infracción.
-                    </li>
-                </ul>
-            </section>
-
-            <!-- Bloques de imágenes con contenedor para slideshow -->
-            <div class="slideshow-container">
-                <div class="image-block">
-                    <img src="./img/Contacto-cesde.jpg" alt="CESDE 1" />
-                    <img src="./img/desarrollo-software-cesde.jpg" alt="CESDE 2" />
-                    <img src="./img/Diseno-grafico-cesde.jpg" alt="CESDE 3" />
-                    <img src="./img/herramientas-ofimaticas.jpg" alt="CESDE 4" />
-                </div>
-                <div class="image-block">
-                    <!-- Ensure the second block has different images or order for visual change -->
-                    <img src="./img/herramientas-ofimaticas.jpg" alt="CESDE 8" />
-                    <img src="./img/Diseno-grafico-cesde.jpg" alt="CESDE 7" />
-                    <img src="./img/desarrollo-software-cesde.jpg" alt="CESDE 6" />
-                    <img src="./img/Contacto-cesde.jpg" alt="CESDE 5" />
-                </div>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inicio - Edu Tech CESDE</title>
+    <link rel="icon" href="./img/icono-cesde.png" type="image/x-icon" sizes="192x192" />
+    <!-- Link general styles -->
+    <link rel="stylesheet" href="css/styles.css" />
+    <!-- Link specific styles for index page -->
+    <link rel="stylesheet" href="css/index.css" />
+</head>
+<body>
+    <!-- Standard Header -->
+    <header role="banner">
+        <nav class="navbar flex flex-between flex-center" role="navigation" aria-label="Menú principal">
+            <div class="logo">
+                <img src="./img/logo-cesde-blanco-sin-fondov2.png" alt="Logo CESDE" loading="lazy">
             </div>
-        </main>
+            <ul class="nav-menu flex">
+                <li><a href="index.html" class="active" aria-current="page">Inicio</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="ubicacion.html">Ubicación</a></li>
+            </ul>
+            <button class="button button-secondary" onclick="location.href='./login.html'" aria-label="Iniciar sesión">
+                Iniciar Sesión
+            </button>
+        </nav>
+    </header>
 
-        <footer>
-            <p>&copy; 2023 CESDE - Todos los derechos reservados.</p>
-        </footer>
-    </body>
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <!-- Introduction Section -->
+        <section class="section-intro">
+            <h1>Bienvenido al Sistema de Préstamo de Equipos de Cómputo</h1>
+            <p>
+                Este sistema está diseñado para facilitar el acceso a equipos
+                tecnológicos dentro de la institución CESDE, garantizando un uso
+                responsable y equitativo.
+            </p>
+        </section>
+
+        <!-- Rules Section -->
+        <section class="section-rules">
+            <h2>Reglas y Políticas de Préstamo</h2>
+            <ul>
+                <li>
+                    Los equipos solo pueden ser prestados y utilizados
+                    <strong>dentro de las instalaciones de la institución CESDE</strong>.
+                </li>
+                <li>
+                    Solo pueden solicitar préstamos
+                    <strong>personas activas</strong> con vínculo laboral o estudiantil
+                    en la institución.
+                </li>
+                <li>
+                    El préstamo de equipos tiene un límite de
+                    <strong>3 horas</strong> por solicitud.
+                </li>
+                <li>
+                    Si el equipo se entrega después del tiempo establecido, el usuario
+                    será <strong>suspendido por 1 mes</strong> después de la tercera
+                    infracción.
+                </li>
+            </ul>
+        </section>
+
+        <!-- Image Slideshow Section -->
+        <section class="slideshow-container" aria-label="Galería de imágenes de CESDE">
+            <div class="image-block">
+                <img src="./img/Contacto-cesde.jpg" alt="Instalaciones CESDE 1" />
+                <img src="./img/desarrollo-software-cesde.jpg" alt="Equipos para Desarrollo de Software" />
+                <img src="./img/Diseno-grafico-cesde.jpg" alt="Equipos para Diseño Gráfico" />
+                <img src="./img/herramientas-ofimaticas.jpg" alt="Equipos para Ofimática" />
+            </div>
+            <div class="image-block">
+                <!-- Second set of images for slideshow effect -->
+                <img src="./img/herramientas-ofimaticas.jpg" alt="Equipos para Ofimática (alternativo)" />
+                <img src="./img/Diseno-grafico-cesde.jpg" alt="Equipos para Diseño Gráfico (alternativo)" />
+                <img src="./img/desarrollo-software-cesde.jpg" alt="Equipos para Desarrollo de Software (alternativo)" />
+                <img src="./img/Contacto-cesde.jpg" alt="Instalaciones CESDE 2" />
+            </div>
+        </section>
+    </main>
+
+    <!-- Standard Footer -->
+    <footer role="contentinfo" class="footer">
+        <div class="container">
+            <p>&copy; 2025 CESDE - Todos los derechos reservados.</p> <!-- Updated year -->
+        </div>
+    </footer>
+</body>
 </html>

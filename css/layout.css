@@ -1,54 +1,69 @@
-/* Layout base */
+/* ==========================================================================
+   Layout Helper Classes
+   ========================================================================== */
+
+/* Base Container */
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: var(--espaciado-base);
+    max-width: 1200px; /* Standard max width */
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--espaciado-base); /* Horizontal padding */
+    padding-right: var(--espaciado-base);
+    width: 100%; /* Ensure it takes full width */
 }
 
-/* Grid system */
+/* Grid System */
 .grid {
     display: grid;
-    gap: var(--espaciado-base);
+    gap: var(--espaciado-base); /* Default gap */
 }
 
+/* 2 Column Grid */
 .grid-2 {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr); /* Two equal columns */
 }
 
+/* 3 Column Grid */
 .grid-3 {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr); /* Three equal columns */
 }
 
-/* Flex utilities */
+/* Flexbox Utilities */
 .flex {
     display: flex;
 }
 
 .flex-between {
-    justify-content: space-between;
+    justify-content: space-between; /* Items spread out */
 }
 
 .flex-center {
-    align-items: center;
+    align-items: center; /* Items centered vertically */
 }
 
 .flex-wrap {
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Allow items to wrap */
 }
 
-/* Responsive utilities */
-@media (max-width: 768px) {
+/* Responsive Utilities */
+@media (max-width: 992px) { /* Adjust breakpoint as needed */
     .grid-3 {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .flex-between {
-        flex-direction: column;
+        grid-template-columns: repeat(2, 1fr); /* 3 columns -> 2 columns */
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) { /* Tablet breakpoint */
     .grid-2, .grid-3 {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Stack columns */
     }
-} 
+
+    .flex-between {
+        /* Already handled in styles.css for navbar, can be used elsewhere */
+        /* Consider adding specific responsive flex classes if needed */
+    }
+}
+
+@media (max-width: 480px) { /* Mobile breakpoint */
+    /* Grid already stacked */
+    /* Add specific mobile layout adjustments if necessary */
+}

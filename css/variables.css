@@ -1,27 +1,48 @@
+/* ==========================================================================
+   CSS Custom Properties (Variables)
+   ========================================================================== */
 :root {
-    /* Colores institucionales */
-    --color-primario: #ff0073;
-    --color-primario-oscuro: #cc005c;
-    --color-secundario: #000080;
-    --color-secundario-claro: #1a1a8a;
-    --color-fondo: #f4f4f4;
-    --color-texto: #333;
+    /* == Colors == */
+    /* Institucionales */
+    --color-primario: #ff0073;        /* Pink */
+    --color-primario-oscuro: #cc005c; /* Darker Pink */
+    --color-secundario: #000080;       /* Navy Blue */
+    --color-secundario-claro: #1a1a8a; /* Lighter Navy Blue */
+
+    /* Neutrals */
+    --color-fondo: #f8f9fa;           /* Lighter Gray Background */
+    --color-texto: #343a40;           /* Dark Gray Text */
     --color-blanco: #ffffff;
-    
-    /* Espaciado */
+    --color-gris-borde: #ced4da;      /* Border Gray */
+    --color-gris-claro: #e9ecef;      /* Light Gray */
+
+    /* Feedback Colors (Optional) */
+    --color-exito: #28a745;
+    --color-error: #dc3545;
+    --color-advertencia: #ffc107;
+    --color-info: #17a2b8;
+
+    /* == Spacing == */
     --espaciado-base: 20px;
     --espaciado-medio: 15px;
     --espaciado-pequeno: 10px;
-    
-    /* Bordes */
-    --radio-borde: 8px;
-    --radio-borde-pequeno: 5px;
-    
-    /* Sombras */
+    --espaciado-muy-pequeno: 5px;
+
+    /* == Borders == */
+    --radio-borde: 8px;               /* Standard border radius */
+    --radio-borde-pequeno: 5px;       /* Smaller border radius */
+    --ancho-borde: 1px;
+
+    /* == Shadows == */
     --sombra-base: 0 2px 5px rgba(0, 0, 0, 0.1);
-    
-    /* Tipografía */
-    --fuente-principal: Arial, sans-serif;
-    --tamano-texto-base: 16px;
-    --tamano-texto-pequeno: 12px;
-} 
+    --sombra-hover: 0 8px 15px rgba(0, 0, 0, 0.15);
+
+    /* == Typography == */
+    --fuente-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern font stack */
+    --tamano-texto-base: 16px;        /* Base font size (1rem) */
+    --tamano-texto-pequeno: 14px;     /* Smaller text (0.875rem) */
+    --tamano-texto-grande: 18px;      /* Larger text (1.125rem) */
+
+    /* == Transitions == */
+    --transicion-base: all 0.3s ease;
+}

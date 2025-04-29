@@ -1,62 +1,68 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <!-- Metadatos básicos -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iniciar Sesión - CESDE</title>
-    <!-- Favicon y estilos -->
+    <title>Iniciar Sesión - Edu Tech CESDE</title>
     <link rel="icon" href="./img/icono-cesde.png" type="image/x-icon" sizes="192x192">
+    <!-- Link general styles -->
     <link rel="stylesheet" href="css/styles.css">
+    <!-- Link component styles (includes form styles) -->
+    <link rel="stylesheet" href="css/components.css">
 </head>
 <body>
-    <!-- Encabezado de la página -->
-    <header>
-        <!-- Barra de navegación -->
-        <nav>
+    <!-- Standard Header -->
+    <header role="banner">
+        <nav class="navbar flex flex-between flex-center" role="navigation" aria-label="Menú principal">
             <div class="logo">
-                <img src="img/logo-cesde-blanco-sin-fondov2.png" alt="Logo CESDE">
+                <img src="./img/logo-cesde-blanco-sin-fondov2.png" alt="Logo CESDE" loading="lazy">
             </div>
-            <!-- Menú de navegación -->
-            <ul>
+            <ul class="nav-menu flex">
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="servicios.html">Servicios</a></li>
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
                 <li><a href="ubicacion.html">Ubicación</a></li>
-                <li><a href="prestamo.html">Préstamo</a></li>
             </ul>
+            <!-- No login button needed on login page -->
         </nav>
     </header>
 
-    <!-- Contenido principal -->
-    <main>
-        <!-- Formulario de inicio de sesión -->
-        <section class="login">
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <!-- Login Form Section -->
+        <section class="section-login">
             <h1>Iniciar Sesión</h1>
-            <!-- Formulario de autenticación -->
-            <form action="#" method="post">
-                <!-- Campo de usuario -->
+            <p>Ingresa tus credenciales para acceder al sistema.</p>
+            <!-- Login Form -->
+            <form action="#" method="post" class="login-form">
+                <!-- Username Field -->
                 <div class="form-group">
-                    <label for="usuario">Usuario:</label>
-                    <input type="text" id="usuario" name="usuario" required>
+                    <label for="usuario">Usuario (Correo o Documento):</label>
+                    <input type="text" id="usuario" name="usuario" class="form-control" required aria-required="true">
                 </div>
-                <!-- Campo de contraseña -->
+                <!-- Password Field -->
                 <div class="form-group">
                     <label for="contrasena">Contraseña:</label>
-                    <input type="password" id="contrasena" name="contrasena" required>
+                    <input type="password" id="contrasena" name="contrasena" class="form-control" required aria-required="true">
                 </div>
-                <!-- Botón de envío -->
-                <div class="form-group">
-                    <button type="submit">Iniciar Sesión</button>
+                <!-- Submit Button -->
+                <div class="form-group form-submit">
+                    <button type="submit" class="button button-primary">Iniciar Sesión</button>
+                </div>
+                <!-- Optional: Add forgot password link -->
+                <div class="form-group forgot-password">
+                    <a href="#">¿Olvidaste tu contraseña?</a>
                 </div>
             </form>
         </section>
     </main>
 
-    <!-- Pie de página -->
-    <footer>
-        <p>&copy; 2023 CESDE - Todos los derechos reservados.</p>
+    <!-- Standard Footer -->
+    <footer role="contentinfo" class="footer">
+        <div class="container">
+            <p>&copy; 2025 CESDE - Todos los derechos reservados.</p>
+        </div>
     </footer>
 </body>
 </html>

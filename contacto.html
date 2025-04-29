@@ -1,58 +1,64 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <!-- Metadatos básicos -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacto - Edu Tech CESDE</title>
-    <!-- Favicon y estilos -->
     <link rel="icon" href="./img/icono-cesde.png" type="image/x-icon" sizes="192x192">
+    <!-- Link general styles -->
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/contacto.css">
+    <!-- Link specific styles if needed, e.g., css/contacto.css -->
+    <!-- <link rel="stylesheet" href="css/contacto.css"> -->
 </head>
 <body>
-    <!-- Encabezado de la página -->
-    <header>
-        <!-- Barra de navegación -->
-        <nav>
+    <!-- Standard Header -->
+    <header role="banner">
+        <nav class="navbar flex flex-between flex-center" role="navigation" aria-label="Menú principal">
             <div class="logo">
-                <img src="./img/logo-cesde-blanco-sin-fondov2.png" alt="Logo CESDE">
+                <img src="./img/logo-cesde-blanco-sin-fondov2.png" alt="Logo CESDE" loading="lazy">
             </div>
-            <!-- Menú de navegación -->
-            <ul>
+            <ul class="nav-menu flex">
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="servicios.html">Servicios</a></li>
                 <li><a href="blog.html">Blog</a></li>
-                <li><a href="contacto.html" class="active">Contacto</a></li>
+                <li><a href="contacto.html" class="active" aria-current="page">Contacto</a></li>
                 <li><a href="ubicacion.html">Ubicación</a></li>
             </ul>
+            <button class="button button-secondary" onclick="location.href='./login.html'" aria-label="Iniciar sesión">
+                Iniciar Sesión
+            </button>
         </nav>
     </header>
 
-    <!-- Contenido principal -->
-    <main>
-        <!-- Sección de contacto con layout flexbox -->
-        <div class="contacto" style="display: flex; justify-content: space-between;">
-            <!-- Información de contacto -->
-            <section class="contacto-text">
-                <h1>Contacto</h1>
-                <p>Para más información o soporte, contactar al área de sistemas de la institución CESDE:</p>
-                <ul>
-                    <li><strong>Correo</strong>: sistemas@cesde.edu</li>
-                    <li><strong>Teléfono</strong>: [Número de contacto]</li>
-                    <li><strong>Oficina</strong>: [Ubicación de la oficina de sistemas]</li>
-                </ul>
-            </section>
-            <!-- Imagen de contacto -->
-            <section class="contacto-img">
-                <img src="./img/Contacto-cesde.jpg" alt="Contacto" class="contacto-img" width="200" height="200">
-            </section>
-        </div>
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <!-- Contact Section using Flexbox via layout classes -->
+        <section class="section-contact">
+            <h1>Información de Contacto</h1>
+            <div class="contact-container flex flex-between flex-wrap"> <!-- Flex container -->
+                <!-- Contact Information -->
+                <div class="contact-info">
+                    <p>Para más información o soporte, contacta al área de sistemas de la institución CESDE:</p>
+                    <ul>
+                        <li><strong>Correo:</strong> <a href="mailto:sistemas@cesde.edu">sistemas@cesde.edu</a></li>
+                        <li><strong>Teléfono:</strong> [Número de contacto actualizado]</li>
+                        <li><strong>Oficina:</strong> [Ubicación detallada de la oficina de sistemas]</li>
+                    </ul>
+                    <p>Horario de atención: Lunes a Viernes de 8:00 AM a 6:00 PM.</p>
+                </div>
+                <!-- Contact Image -->
+                <div class="contact-image">
+                    <img src="./img/Contacto-cesde.jpg" alt="Imagen ilustrativa de contacto en CESDE" loading="lazy" width="300"> <!-- Adjusted size -->
+                </div>
+            </div>
+        </section>
     </main>
 
-    <!-- Pie de página -->
-    <footer style="position: fixed; bottom: 0; width: 100%;">
-        <p>&copy; 2023 CESDE - Todos los derechos reservados.</p>
+    <!-- Standard Footer -->
+    <footer role="contentinfo" class="footer">
+        <div class="container">
+            <p>&copy; 2025 CESDE - Todos los derechos reservados.</p>
+        </div>
     </footer>
 </body>
 </html>

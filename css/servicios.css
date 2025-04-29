@@ -1,60 +1,85 @@
 /* ==========================================================================
-   Estilos de Servicios
+   Services Page Specific Styles
    ========================================================================== */
 
-/* Estilos para la sección de servicios */
-.servicios {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+.section-services h1 {
+    text-align: center; /* Center the main title */
+    margin-bottom: var(--espaciado-base);
 }
 
-/* Estilos para las tarjetas de equipos */
-.card {
-    background-color: white;
-    border-radius: 8px;
-    padding: 15px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+/* Container for the service cards - uses grid from layout.css */
+.equipment-cards {
+    /* .grid and .grid-3 classes are applied in HTML */
+    gap: var(--espaciado-base); /* Adjust gap between cards */
 }
 
-/* Estilos para las imágenes de las tarjetas */
-.card-img {
+/* Individual service card styling */
+.service-card {
+    /* Inherits base .card styles from components.css */
+    display: flex; /* Use flexbox for internal layout */
+    flex-direction: column; /* Stack image and content vertically */
     text-align: center;
-    margin-bottom: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add hover effect */
 }
 
-/* Estilos para el texto de las tarjetas */
-.card-text {
-    text-align: center;
+.service-card:hover {
+    transform: translateY(-5px); /* Lift card slightly on hover */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); /* Enhance shadow on hover */
 }
 
-/* Estilos para los títulos de las tarjetas */
-.card-text h3 {
-    color: #333;
-    margin-bottom: 10px;
+.service-card .card-img {
+    max-width: 150px; /* Control image size */
+    height: 150px; /* Fixed height */
+    object-fit: cover; /* Ensure image covers the area */
+    border-radius: 50%; /* Make image circular */
+    margin: 0 auto var(--espaciado-medio) auto; /* Center image and add bottom margin */
+    border: 3px solid var(--color-fondo); /* Optional border */
 }
 
-/* Estilos para los párrafos de las tarjetas */
-.card-text p {
-    color: #666;
-    margin-bottom: 15px;
+.service-card .card-content {
+    flex-grow: 1; /* Allow content to fill space */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Push link to bottom */
 }
 
-/* Estilos para los enlaces de las tarjetas */
-.card-text a {
-    color: #ff0073;
-    text-decoration: none;
+.service-card h3 {
+    color: var(--color-secundario);
+    margin-bottom: var(--espaciado-pequeno);
+}
+
+.service-card p {
+    color: var(--color-texto);
+    margin-bottom: var(--espaciado-medio);
+    flex-grow: 1; /* Allow paragraph to take available space */
+}
+
+.service-card .card-link {
+    color: var(--color-primario);
     font-weight: bold;
+    text-decoration: none;
+    display: inline-block; /* Needed for padding */
+    padding: var(--espaciado-pequeno) 0;
+    margin-top: auto; /* Push link down */
 }
 
-/* Efecto hover para los enlaces */
-.card-text a:hover {
+.service-card .card-link:hover {
     text-decoration: underline;
+    color: var(--color-primario-oscuro);
 }
 
-footer{
-    position: relative;
-    bottom: 0;
-    width: 98.5%;
+/* Remove specific footer styling - handled by styles.css */
+/* footer { ... } */
+
+/* Responsive adjustments for cards */
+@media (max-width: 768px) {
+    /* .grid-3 changes to 2 columns via layout.css */
+}
+
+@media (max-width: 480px) {
+    /* .grid-3 changes to 1 column via layout.css */
+    .service-card .card-img {
+        max-width: 120px;
+        height: 120px;
+    }
 }

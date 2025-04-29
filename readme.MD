@@ -1,99 +1,47 @@
+# Sistema de Préstamo de Equipos de Cómputo - Edu Tech CESDE
+
+Bienvenido al repositorio del sistema web para el préstamo de equipos de cómputo de la institución educativa CESDE. Este proyecto frontend (HTML/CSS) está diseñado para facilitar el acceso a equipos tecnológicos dentro de la institución, proporcionando información clara y un proceso de solicitud sencillo.
 
 ---
 
-# **Sistema de Préstamo de Equipos de Cómputo - CESDE**
+## **Descripción General**
 
-Bienvenido al sistema de préstamo de equipos de cómputo de la institución educativa CESDE. Este sistema está diseñado para facilitar el acceso a equipos tecnológicos dentro de la institución, garantizando un uso responsable y equitativo.
-
----
-
-## **Reglas y Políticas de Préstamo**
-
-1. **Ámbito de Uso**:
-   - Los equipos solo pueden ser prestados y utilizados **dentro de las instalaciones de la institución CESDE**.
-
-2. **Usuarios Habilitados**:
-   - Solo pueden solicitar préstamos **personas activas** con vínculo laboral o estudiantil en la institución.
-   - Esto incluye:
-     - Estudiantes matriculados.
-     - Personal administrativo.
-     - Profesores y personal vinculado.
-
-3. **Duración del Préstamo**:
-   - El préstamo de equipos tiene un límite de **3 horas** por solicitud.
-   - Si el equipo se entrega después del tiempo establecido, el usuario será **suspendido por 1 mes** después de la tercera infracción.
-
-4. **Tipos de Equipos Disponibles**:
-   - Los equipos están clasificados según la carrera matriculada o el rol del usuario:
-     - **Desarrollo de Software**: Equipos con herramientas especializadas para programación.
-     - **Diseño Gráfico**: Equipos con software de diseño y edición gráfica.
-     - **Herramientas Ofimáticas**: Equipos con software básico para tareas administrativas y ofimáticas.
-   - **Nota**: Si el usuario no pertenece a las carreras de Desarrollo de Software o Diseño Gráfico, se le asignará un equipo de **Herramientas Ofimáticas**. Esto aplica también para personal administrativo, profesores y otros vinculados que no sean estudiantes.
-
-5. **Sedes**:
-   - Los equipos están asignados a una sede específica y solo pueden ser prestados en esa sede.
+El sitio web consta de varias páginas estáticas que informan a los usuarios sobre los servicios de préstamo, las reglas, la ubicación, y permiten iniciar sesión (simulado) o solicitar un préstamo (formulario).
 
 ---
 
-## **Proceso de Préstamo**
+## **Estructura del Proyecto**
 
-1. **Registro**:
-   - El usuario debe identificarse con su documento y verificar su vínculo activo con la institución.
-   
-2. **Selección de Equipo**:
-   - El sistema asignará el equipo correspondiente según la carrera o rol del usuario.
-   
-3. **Uso y Devolución**:
-   - El equipo debe ser utilizado dentro de las instalaciones y devuelto en un plazo máximo de 3 horas.
-   - En caso de retraso, se aplicarán las sanciones correspondientes.
+### Páginas Principales
+1. **`index.html`**: Página de inicio con introducción y reglas.
+2. **`servicios.html`**: Información sobre los servicios de préstamo.
+3. **`blog.html`**: Blog con contenido exclusivo.
+4. **`contacto.html`**: Información de contacto.
+5. **`ubicacion.html`**: Ubicación de la institución con un mapa embebido.
+6. **`prestamo.html`**: Formulario para solicitar préstamos.
+7. **`login.html`**: Página de inicio de sesión.
 
----
+### Archivos CSS
+- **`styles.css`**: Estilos generales.
+- **`variables.css`**: Variables globales para colores, tamaños y espaciados.
+- **`index.css`**: Estilos específicos para la página de inicio.
+- **`blog.css`**: Estilos para la página del blog.
+- **`servicios.css`**: Estilos para la página de servicios.
 
-## **Sanciones**
+## Recomendaciones
+1. **Mantenimiento**:
+   - Centralizar más estilos en `variables.css` para facilitar cambios globales.
+   - Usar un preprocesador como SASS para modularizar aún más los estilos.
 
-- **Primera y Segunda Infracción**:
-  - Aviso verbal o escrito.
-- **Tercera Infracción**:
-  - Suspensión del servicio de préstamo por **1 mes**.
+2. **Accesibilidad**:
+   - Añadir atributos `aria-label` y `alt` descriptivos en todas las imágenes y botones.
 
----
+3. **SEO**:
+   - Optimizar títulos y descripciones en las etiquetas `<meta>`.
 
-## **Consideraciones Adicionales**
-
-- Los equipos son propiedad de la institución y deben ser tratados con cuidado.
-- Cualquier daño o pérdida del equipo será responsabilidad del usuario y deberá ser reportado inmediatamente.
-
----
-
-## **Contacto**
-
-Para más información o soporte, contactar al área de sistemas de la institución CESDE:
-- **Correo**: sistemas@cesde.edu
-- **Teléfono**: [Número de contacto]
-- **Oficina**: [Ubicación de la oficina de sistemas].
+4. **Pruebas**:
+   - Probar el diseño en diferentes navegadores y dispositivos para garantizar compatibilidad.
 
 ---
 
-# **Estructura del Proyecto**
-
-## **index.html:** Página de Inicio.
-
-## **servicios.html:** Página de Servicios.
-
-## **blog.html:** Página del Blog (con inicio de sesión).
-
-## **contacto.html:** Página de Contacto.
-
-## **ubicacion.html:** Página de Ubicación (con mapa de Google).
-
-## **prestamo.html:** Formulario de Préstamo:
-
-## **login.html:** Inicio de Sesión:
-
-## **styles.css:** Estilos comunes para todas las páginas.
-
----
-
-Gracias por utilizar el sistema de préstamo de equipos de cómputo de CESDE. ¡Esperamos que sea de gran utilidad para tu formación o trabajo!
-
----
+¡Gracias por usar el sistema de préstamo de equipos de CESDE!

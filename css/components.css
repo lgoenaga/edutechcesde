@@ -1,62 +1,123 @@
-/* Componentes reutilizables */
+/* ==========================================================================
+   Reusable UI Components
+   ========================================================================== */
+
+/* Card Component Base Style */
 .card {
     background-color: var(--color-blanco);
     border-radius: var(--radio-borde);
-    padding: var(--espaciado-medio);
+    padding: var(--espaciado-base); /* Increased padding */
     box-shadow: var(--sombra-base);
+    border: 1px solid #eee; /* Subtle border */
 }
 
+/* Button Component Base Style */
 .button {
+    display: inline-block; /* Ensure padding and margins work correctly */
     padding: var(--espaciado-pequeno) var(--espaciado-base);
     border-radius: var(--radio-borde-pequeno);
     border: none;
     cursor: pointer;
     font-weight: bold;
-    transition: background-color 0.3s ease;
+    text-align: center;
+    text-decoration: none; /* Remove underline if used on <a> tags */
+    font-size: var(--tamano-texto-base); /* Consistent font size */
+    line-height: 1.5; /* Ensure text vertical alignment */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
 }
 
+.button:hover {
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+.button:active {
+    transform: translateY(0px); /* Press effect */
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.2);
+}
+
+/* Primary Button Style */
 .button-primary {
     background-color: var(--color-primario);
     color: var(--color-blanco);
 }
 
-.button-primary:hover {
+.button-primary:hover, .button-primary:focus {
     background-color: var(--color-primario-oscuro);
+    color: var(--color-blanco); /* Ensure text color remains */
 }
 
+/* Secondary Button Style */
 .button-secondary {
     background-color: var(--color-secundario);
     color: var(--color-blanco);
 }
 
-.button-secondary:hover {
+.button-secondary:hover, .button-secondary:focus {
     background-color: var(--color-secundario-claro);
+    color: var(--color-blanco); /* Ensure text color remains */
 }
 
+/* Form Component Styles */
 .form-group {
-    margin-bottom: var(--espaciado-pequeno);
+    margin-bottom: var(--espaciado-medio); /* Consistent spacing */
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: var(--espaciado-pequeno); /* Space between label and input */
+    font-weight: bold;
+    font-size: 0.9em; /* Slightly smaller label */
 }
 
 .form-control {
     width: 100%;
-    padding: var(--espaciado-pequeno);
-    border: 1px solid #ddd;
+    padding: var(--espaciado-pequeno) var(--espaciado-medio); /* Adjust padding */
+    border: 1px solid #ccc; /* Slightly darker border */
     border-radius: var(--radio-borde-pequeno);
-    font-size: var(--tamano-texto-pequeno);
-    transition: border-color 0.3s ease;
+    font-size: var(--tamano-texto-base); /* Match base text size */
+    line-height: 1.5;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .form-control:focus {
     border-color: var(--color-primario);
     outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 0, 115, 0.2); /* Focus indicator */
 }
 
+/* Style for select dropdown arrows */
+select.form-control {
+    appearance: none; /* Remove default arrow */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23333'%3E%3Cpath fill-rule='evenodd' d='M8 11.5a.5.5 0 0 1-.354-.146l-4-4a.5.5 0 0 1 .708-.708L8 10.293l3.646-3.647a.5.5 0 0 1 .708.708l-4 4A.5.5 0 0 1 8 11.5z'/%3E%3C/svg%3E"); /* Custom arrow */
+    background-repeat: no-repeat;
+    background-position: right var(--espaciado-medio) center;
+    background-size: 16px 16px;
+    padding-right: calc(var(--espaciado-medio) * 2.5); /* Make space for arrow */
+}
+
+/* Error Styling (Example) */
 .form-control.error {
-    border-color: #ff0000;
+    border-color: #dc3545; /* Red border for errors */
+}
+
+.form-control.error:focus {
+     box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.25); /* Red focus indicator */
 }
 
 .error-message {
-    color: #ff0000;
+    color: #dc3545; /* Red text for error messages */
     font-size: var(--tamano-texto-pequeno);
-    margin-top: 5px;
-} 
+    margin-top: var(--espaciado-pequeno);
+    display: block; /* Ensure it takes its own line */
+}
+
+/* Form Submit Button Alignment */
+.form-submit {
+    margin-top: var(--espaciado-base); /* Add space before submit button */
+    text-align: right; /* Align button to the right, or center/left as needed */
+}
+
+.form-submit .button {
+    min-width: 120px; /* Give button a minimum width */
+}

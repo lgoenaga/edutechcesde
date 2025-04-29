@@ -1,60 +1,78 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <!-- Metadatos básicos -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog - Edu Tech CESDE</title>
-    <!-- Favicon y estilos -->
     <link rel="icon" href="./img/icono-cesde.png" type="image/x-icon" sizes="192x192">
+    <!-- Link general styles -->
     <link rel="stylesheet" href="css/styles.css">
+    <!-- Link specific styles for blog page -->
     <link rel="stylesheet" href="css/blog.css">
 </head>
 <body>
-    <!-- Encabezado de la página -->
-    <header>
-        <!-- Barra de navegación -->
-        <nav>
+    <!-- Standard Header -->
+    <header role="banner">
+        <nav class="navbar flex flex-between flex-center" role="navigation" aria-label="Menú principal">
             <div class="logo">
-                <img src="./img/logo-cesde-blanco-sin-fondov2.png" alt="Logo CESDE">
+                <img src="./img/logo-cesde-blanco-sin-fondov2.png" alt="Logo CESDE" loading="lazy">
             </div>
-            <!-- Menú de navegación -->
-            <ul>
+            <ul class="nav-menu flex">
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="servicios.html">Servicios</a></li>
-                <li><a href="blog.html" class="active">Blog</a></li>
+                <li><a href="blog.html" class="active" aria-current="page">Blog</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
                 <li><a href="ubicacion.html">Ubicación</a></li>
             </ul>
-            <!-- Botón de inicio de sesión -->
-            <button class="login-btn" onclick="location.href='./login.html'">Iniciar Sesión</button>
+            <button class="button button-secondary" onclick="location.href='./login.html'" aria-label="Iniciar sesión">
+                Iniciar Sesión
+            </button>
         </nav>
     </header>
 
-    <!-- Contenido principal -->
-    <main>
-        <!-- Sección del blog -->
-        <section class="blog">
-            <h1>Blog</h1>
-            <!-- Contenedor de imagen del blog -->
-            <div class="blog-img">
-            </div>    
-            <!-- Mensaje de acceso -->
-            <p>Accede a contenido exclusivo sobre tecnología, educación y más. Inicia sesión para ver las publicaciones.</p>
-            <!-- Sección de publicaciones -->
-            <section class="blog-posts">
-                <!-- Artículo de ejemplo -->
-                <article class="blog-post">
-                    <h2>Publicación 1</h2>
-                    <p>Contenido de la publicación 1.</p>
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <!-- Blog Section -->
+        <section class="section-blog">
+            <h1>Blog Edu Tech</h1>
+            <!-- Placeholder for a featured blog image -->
+            <div class="blog-featured-image" aria-hidden="true">
+                <!-- Background image can be set via CSS -->
+            </div>
+            <!-- Access Message -->
+            <p class="blog-access-message">
+                Accede a contenido exclusivo sobre tecnología, educación y más.
+                <a href="login.html">Inicia sesión</a> para ver todas las publicaciones.
+            </p>
+            <!-- Blog Posts Container -->
+            <div class="blog-posts-container grid"> <!-- Using grid layout -->
+                <!-- Example Blog Post Card -->
+                <article class="card blog-post-card">
+                    <img src="./img/placeholder-post.png" alt="Imagen miniatura de la Publicación 1" class="card-img" loading="lazy"> <!-- Add a placeholder image -->
+                    <div class="card-content">
+                        <h2><a href="#">Título de la Publicación 1</a></h2>
+                        <p class="post-excerpt">Un breve resumen del contenido de la publicación 1...</p>
+                        <span class="post-meta">Publicado el 20 Abr, 2025</span>
+                    </div>
                 </article>
-            </section>
+                <!-- Add more article cards as needed -->
+                 <article class="card blog-post-card">
+                    <img src="./img/placeholder-post.png" alt="Imagen miniatura de la Publicación 2" class="card-img" loading="lazy">
+                    <div class="card-content">
+                        <h2><a href="#">Título de la Publicación 2</a></h2>
+                        <p class="post-excerpt">Otro resumen interesante sobre un tema tecnológico...</p>
+                        <span class="post-meta">Publicado el 15 Abr, 2025</span>
+                    </div>
+                </article>
+            </div>
         </section>
     </main>
 
-    <!-- Pie de página -->
-    <footer>
-        <p>&copy; 2023 CESDE - Todos los derechos reservados.</p>
+    <!-- Standard Footer -->
+    <footer role="contentinfo" class="footer">
+        <div class="container">
+            <p>&copy; 2025 CESDE - Todos los derechos reservados.</p>
+        </div>
     </footer>
 </body>
 </html>

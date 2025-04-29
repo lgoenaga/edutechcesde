@@ -1,105 +1,151 @@
-/* Estilos base */
-body {
-    font-family: var(--fuente-principal);
-    font-size: var(--tamano-texto-base);
-    color: var(--color-texto);
-    background-color: var(--color-fondo);
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
+/* ==========================================================================
+   Index Page Specific Styles
+   ========================================================================== */
+
+/* Introduction and Rules Sections */
+.section-intro, .section-rules {
+    max-width: 800px; /* Limit width for readability */
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center; /* Center text */
+    background-color: transparent; /* Remove default section background if desired */
+    box-shadow: none; /* Remove default section shadow if desired */
+    padding: 0; /* Remove default section padding if desired */
 }
 
-/* Header */
-header {
-    background-color: var(--color-secundario);
-    padding: var(--espaciado-medio);
-    color: var(--color-blanco);
+.section-rules {
+    text-align: left; /* Keep rules list left-aligned */
 }
 
-header nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+.section-intro h1 {
+    font-size: 1.8rem; /* Adjust as needed */
+    margin-bottom: var(--espaciado-pequeno);
 }
 
-header nav ul li {
-    margin: 0 var(--espaciado-pequeno);
-}
-
-header nav ul li a {
-    color: var(--color-blanco);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-header nav ul li a:hover {
-    color: var(--color-primario);
-}
-
-/* Hero section */
-.hero {
-    text-align: center;
-    padding: var(--espaciado-base) 0;
-    background-color: var(--color-primario);
-    color: var(--color-blanco);
+.section-intro p {
+    font-size: 1rem; /* Adjust as needed */
     margin-bottom: var(--espaciado-base);
 }
 
-.hero h1 {
-    font-size: 2.5em;
+.section-rules h2 {
+    font-size: 1.5rem; /* Adjust as needed */
+    margin-bottom: var(--espaciado-medio);
+    text-align: center; /* Center heading */
+}
+
+.section-rules ul {
+    padding-left: 0; /* Remove default padding */
+    list-style-position: inside; /* Indent bullets */
+    margin-bottom: 0;
+    display: inline-block; /* Fit content width */
+    text-align: left; /* Ensure list items are left-aligned */
+    /* Centering the ul block itself */
+    margin-left: auto;
+    margin-right: auto;
+    display: table; /* Another way to center block element */
+}
+
+.section-rules li {
     margin-bottom: var(--espaciado-pequeno);
+    font-size: 0.95rem; /* Adjust as needed */
 }
 
-        /* Color blanco para el texto del nav activo */
-        .active {
-            color: gray;
-        }
-
-/* Cards */
-.card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+/* Slideshow Styles */
+.slideshow-container {
+    position: relative; /* Needed for absolute positioning of children */
+    width: 100%; /* Take full width of parent */
+    max-width: 800px; /* Consistent max-width */
+    margin: var(--espaciado-base) auto; /* Center container and add vertical margin */
+    overflow: hidden; /* Hide potential overflow */
+    min-height: 150px; /* Adjust based on expected image height */
+    background-color: transparent; /* Remove default section background */
+    box-shadow: none; /* Remove default section shadow */
+    padding: 0; /* Remove default section padding */
 }
 
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+.image-block {
+    display: flex;
+    justify-content: center; /* Center images horizontally */
+    align-items: center; /* Center images vertically */
+    flex-wrap: wrap; /* Allow wrapping */
+    gap: var(--espaciado-pequeno); /* Spacing between images */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: var(--espaciado-pequeno) 0; /* Vertical padding inside the block */
+    opacity: 0; /* Hidden by default, controlled by animation */
 }
 
-.card h2 {
-    color: var(--color-secundario);
-    margin-bottom: var(--espaciado-pequeno);
+.image-block img {
+    /* Responsive width: aim for 4 across on larger screens */
+    width: calc(25% - 12px); /* Adjust calculation based on gap */
+    max-width: 180px; /* Max size per image */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Cover the area */
+    border-radius: var(--radio-borde-pequeno); /* Rounded corners */
+    vertical-align: middle; /* Better alignment */
+    box-shadow: var(--sombra-base); /* Subtle shadow */
+    transition: transform 0.3s ease;
 }
 
-/* Footer */
-footer {
-    background-color: var(--color-secundario);
-    color: var(--color-blanco);
-    padding: var(--espaciado-medio) 0;
-    text-align: center;
-    margin-top: var(--espaciado-base);
+.image-block img:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
 }
 
-/* Responsive adjustments */
+/* Animation Keyframes for smoother fade */
+@keyframes cycleBlock1 {
+    0% { opacity: 1; z-index: 1; } /* Ensure visible block is on top */
+    45% { opacity: 1; z-index: 1; } /* Stay visible */
+    50% { opacity: 0; z-index: 0; } /* Fade out and go behind */
+    95% { opacity: 0; z-index: 0; } /* Stay hidden */
+    100% { opacity: 1; z-index: 1; } /* Fade back in */
+}
+
+@keyframes cycleBlock2 {
+    0% { opacity: 0; z-index: 0; }
+    45% { opacity: 0; z-index: 0; } /* Stay hidden */
+    50% { opacity: 1; z-index: 1; } /* Fade in */
+    95% { opacity: 1; z-index: 1; } /* Stay visible */
+    100% { opacity: 0; z-index: 0; } /* Fade out */
+}
+
+/* Apply animations */
+.slideshow-container .image-block:nth-of-type(1) {
+    opacity: 1; /* Start visible */
+    z-index: 1;
+    animation: cycleBlock1 20s infinite ease-in-out; /* 20s total cycle, smooth timing */
+}
+
+.slideshow-container .image-block:nth-of-type(2) {
+    opacity: 0; /* Start hidden */
+    z-index: 0;
+    animation: cycleBlock2 20s infinite ease-in-out; /* 20s total cycle, smooth timing */
+}
+
+/* Responsive adjustments for image layout */
 @media (max-width: 768px) {
-    .hero h1 {
-        font-size: 2em;
+    .image-block img {
+        /* Aim for 3 across on medium screens */
+        width: calc(33.33% - 10px);
+        max-width: 160px;
     }
-    
-    header nav {
-        flex-direction: column;
-    }
-    
-    header nav ul {
-        margin: var(--espaciado-pequeno) 0;
-    }
+    .slideshow-container { min-height: 130px; } /* Adjust height */
+
+    .section-intro h1 { font-size: 1.6rem; }
+    .section-rules h2 { font-size: 1.4rem; }
 }
 
 @media (max-width: 480px) {
-    .hero h1 {
-        font-size: 1.5em;
+    .image-block img {
+        /* Aim for 2 across on small screens */
+        width: calc(50% - 10px);
+        max-width: 150px;
     }
-    
-    .card {
-        margin-bottom: var(--espaciado-medio);
-    }
-} 
+    .slideshow-container { min-height: 120px; } /* Adjust height */
+
+    .section-intro h1 { font-size: 1.5rem; }
+    .section-intro p { font-size: 0.9rem; }
+    .section-rules h2 { font-size: 1.3rem; }
+    .section-rules li { font-size: 0.9rem; }
+}
