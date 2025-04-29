@@ -1,0 +1,105 @@
+/* Estilos base */
+body {
+    font-family: var(--fuente-principal);
+    font-size: var(--tamano-texto-base);
+    color: var(--color-texto);
+    background-color: var(--color-fondo);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background-color: var(--color-secundario);
+    padding: var(--espaciado-medio);
+    color: var(--color-blanco);
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+header nav ul li {
+    margin: 0 var(--espaciado-pequeno);
+}
+
+header nav ul li a {
+    color: var(--color-blanco);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: var(--color-primario);
+}
+
+/* Hero section */
+.hero {
+    text-align: center;
+    padding: var(--espaciado-base) 0;
+    background-color: var(--color-primario);
+    color: var(--color-blanco);
+    margin-bottom: var(--espaciado-base);
+}
+
+.hero h1 {
+    font-size: 2.5em;
+    margin-bottom: var(--espaciado-pequeno);
+}
+
+        /* Color blanco para el texto del nav activo */
+        .active {
+            color: gray;
+        }
+
+/* Cards */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card h2 {
+    color: var(--color-secundario);
+    margin-bottom: var(--espaciado-pequeno);
+}
+
+/* Footer */
+footer {
+    background-color: var(--color-secundario);
+    color: var(--color-blanco);
+    padding: var(--espaciado-medio) 0;
+    text-align: center;
+    margin-top: var(--espaciado-base);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2em;
+    }
+    
+    header nav {
+        flex-direction: column;
+    }
+    
+    header nav ul {
+        margin: var(--espaciado-pequeno) 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.5em;
+    }
+    
+    .card {
+        margin-bottom: var(--espaciado-medio);
+    }
+} 

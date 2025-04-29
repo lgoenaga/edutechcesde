@@ -1,91 +1,148 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <!-- Metadatos básicos -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio - Edu Tech CESDE</title>
-    <!-- Favicon y estilos -->
-    <link rel="icon" href="./img/icono-cesde.png" type="image/x-icon" sizes="192x192">
-    <link rel="stylesheet" href="styles.css">
-    <!-- Estilos específicos para el carrusel -->
-    <style>
-        /* Contenedor del carrusel de imágenes */
-        .carrusel-img {
-            background-color: #f2f2f2;
-            padding: 20px;
-            display: flex;
-            overflow-x: auto;
-        }
+	<head>
+		<!-- Metadatos básicos -->
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Inicio - Edu Tech CESDE</title>
+		<!-- Favicon y estilos -->
+		<link
+			rel="icon"
+			href="./img/icono-cesde.png"
+			type="image/x-icon"
+			sizes="192x192"
+		/>
+		<link rel="stylesheet" href="css/styles.css" />
+		<!-- Estilos específicos para el carrusel -->
+		<style>
+			/* Contenedor del carrusel */
+			.carrusel-img {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				overflow: hidden;
+				position: relative;
+				width: 100%;
+				max-width: 820px; /* Ajustado para incluir márgenes */
+				margin: auto;
+				margin-bottom: 20px; /* Espacio entre el carrusel y el footer */
+			}
 
-        /* Estilos para las imágenes del carrusel */
-        .carrusel-img img {
-            width: 200px;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 10px;
-            margin-right: 10px;
-        }
-    </style>
-</head>
-<body>
-    <!-- Encabezado de la página -->
-    <header>
-        <!-- Barra de navegación -->
-        <nav>
-            <div class="logo">
-                <img src="./img/logo-cesde-blanco-sin-fondov2.png" alt="Logo CESDE">
-            </div>
-            <!-- Menú de navegación -->
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="servicios.html">Servicios</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-                <li><a href="ubicacion.html">Ubicación</a></li>
-            </ul>
-        </nav>
-    </header>
+			/* Contenedor interno para las imágenes */
+			.carrusel-track {
+				display: flex;
+				width: calc(
+					(200px + 10px) * 8
+				); /* Ancho total de las imágenes + márgenes */
+				animation: slide 20s infinite; /* Animación automática cada 20 segundos */
+			}
 
-    <!-- Contenido principal -->
-    <main>
-        <!-- Sección de introducción -->
-        <section class="intro">
-            <h1>Bienvenido al Sistema de Préstamo de Equipos de Cómputo</h1>
-            <p>Este sistema está diseñado para facilitar el acceso a equipos tecnológicos dentro de la institución CESDE, garantizando un uso responsable y equitativo.</p>
-        </section>
+			/* Estilos para las imágenes */
+			.carrusel-img img {
+				width: 200px;
+				height: 200px;
+				object-fit: cover;
+				margin: 0 5px; /* Márgenes entre las imágenes */
+			}
 
-        <!-- Sección de reglas y políticas -->
-        <section class="reglas">
-            <h2>Reglas y Políticas de Préstamo</h2>
-            <ul>
-                <li>Los equipos solo pueden ser prestados y utilizados <strong>dentro de las instalaciones de la institución CESDE</strong>.</li>
-                <li>Solo pueden solicitar préstamos <strong>personas activas</strong> con vínculo laboral o estudiantil en la institución.</li>
-                <li>El préstamo de equipos tiene un límite de <strong>3 horas</strong> por solicitud.</li>
-                <li>Si el equipo se entrega después del tiempo establecido, el usuario será <strong>suspendido por 1 mes</strong> después de la tercera infracción.</li>
-            </ul>
-        </section>
+			/* Animación automática */
+			@keyframes slide {
+				0% {
+					transform: translateX(0); /* Primera página */
+				}
+				25% {
+					transform: translateX(0); /* Mantener la primera página */
+				}
+				50% {
+					transform: translateX(
+						-840px
+					); /* Segunda página (4 imágenes desplazadas) */
+				}
+				75% {
+					transform: translateX(-840px); /* Mantener la segunda página */
+				}
+				100% {
+					transform: translateX(0); /* Regresa a la primera página */
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<!-- Encabezado de la página -->
+		<header>
+			<!-- Barra de navegación -->
+			<nav>
+				<div class="logo">
+					<img src="./img/logo-cesde-blanco-sin-fondov2.png" alt="Logo CESDE" />
+				</div>
+				<!-- Menú de navegación -->
+				<ul>
+					<li><a href="index.html" class="active">Inicio</a></li>
+					<li><a href="servicios.html">Servicios</a></li>
+					<li><a href="blog.html">Blog</a></li>
+					<li><a href="contacto.html">Contacto</a></li>
+					<li><a href="ubicacion.html">Ubicación</a></li>
+				</ul>
+			</nav>
+		</header>
 
-        <!-- Sección del carrusel de imágenes -->
-        <section class="carrusel-img">
-            <div class="carrusel-img">
-                <img src="./img/Contacto-cesde.jpg" alt="CESDE 1">
-                <img src="./img/desarrollo-software-cesde.jpg" alt="CESDE 2">
-                <img src="./img/Diseno-grafico-cesde.jpg" alt="CESDE 3">
-                <img src="./img/herramientas-ofimaticas.jpg" alt="CESDE 4">
-                <img src="./img/portada-cesde.jpg" alt="CESDE 5">
-                <img src="./img/Contacto-cesde.jpg" alt="CESDE 1">
-                <img src="./img/desarrollo-software-cesde.jpg" alt="CESDE 2">
-                <img src="./img/Diseno-grafico-cesde.jpg" alt="CESDE 3">
-                <img src="./img/herramientas-ofimaticas.jpg" alt="CESDE 4">
-                <img src="./img/portada-cesde.jpg" alt="CESDE 5">
-            </div>
-        </section>
-    </main>
+		<!-- Contenido principal -->
+		<main>
+			<!-- Sección de introducción -->
+			<section class="intro">
+				<h1>Bienvenido al Sistema de Préstamo de Equipos de Cómputo</h1>
+				<p>
+					Este sistema está diseñado para facilitar el acceso a equipos
+					tecnológicos dentro de la institución CESDE, garantizando un uso
+					responsable y equitativo.
+				</p>
+			</section>
 
-    <!-- Pie de página -->
-    <footer style="position: fixed; bottom: 0; width: 100%;">
-        <p>&copy; 2023 CESDE - Todos los derechos reservados.</p>
-    </footer>
-</body>
+			<!-- Sección de reglas y políticas -->
+			<section class="reglas">
+				<h2>Reglas y Políticas de Préstamo</h2>
+				<ul>
+					<li>
+						Los equipos solo pueden ser prestados y utilizados
+						<strong>dentro de las instalaciones de la institución CESDE</strong
+						>.
+					</li>
+					<li>
+						Solo pueden solicitar préstamos
+						<strong>personas activas</strong> con vínculo laboral o estudiantil
+						en la institución.
+					</li>
+					<li>
+						El préstamo de equipos tiene un límite de
+						<strong>3 horas</strong> por solicitud.
+					</li>
+					<li>
+						Si el equipo se entrega después del tiempo establecido, el usuario
+						será <strong>suspendido por 1 mes</strong> después de la tercera
+						infracción.
+					</li>
+				</ul>
+			</section>
+
+			<!-- Carrusel -->
+			<section class="carrusel-img">
+				<!-- Contenedor de las imágenes -->
+				<div class="carrusel-track">
+					<img src="./img/Contacto-cesde.jpg" alt="CESDE 1" />
+					<img src="./img/desarrollo-software-cesde.jpg" alt="CESDE 2" />
+					<img src="./img/Diseno-grafico-cesde.jpg" alt="CESDE 3" />
+					<img src="./img/herramientas-ofimaticas.jpg" alt="CESDE 4" />
+					<img src="./img/Contacto-cesde.jpg" alt="CESDE 5" />
+					<img src="./img/desarrollo-software-cesde.jpg" alt="CESDE 6" />
+					<img src="./img/Diseno-grafico-cesde.jpg" alt="CESDE 7" />
+					<img src="./img/herramientas-ofimaticas.jpg" alt="CESDE 8" />
+				</div>
+			</section>
+		</main>
+
+		<!-- Pie de página -->
+		<footer>
+			<p>&copy; 2023 CESDE - Todos los derechos reservados.</p>
+		</footer>
+	</body>
 </html>
